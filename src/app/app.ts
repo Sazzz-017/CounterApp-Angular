@@ -8,5 +8,19 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('myCounter');
+  count:number = 0;
+
+  incrementClick(){
+    this.count = this.count+1;
+  }
+
+  decrementClick(){
+    if(this.count>0){
+    this.count=this.count-1;
+    }
+  }
+
+  resetClick(){
+    this.count=0;
+  }
 }
